@@ -1,5 +1,5 @@
 ---
-name: self-learning
+name: deep-research
 description: 自主学习系统。触发词：去学习、研究一下、深入了解、learn、research、快速了解、验证一下。联网研究→辨别真伪→生成报告→用户审核→入库分类。
 ---
 
