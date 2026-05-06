@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+knowledge-base/
+*.json
+!references/*.md
+reports/
