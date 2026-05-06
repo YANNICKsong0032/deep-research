@@ -1,6 +1,6 @@
-# 🧠 Self-Learning Skill
+# 🔍 Deep Research
 
-> 一个具备**自主学习、知识管理、间隔复习**能力的 AI Agent Skill
+> AI Agent **深度研究**系统 — 联网研究 → 辨别真伪 → 生成报告 → 用户审核 → 知识入库 → 间隔复习
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.7+](https://img.shields.io/badge/Python-3.7+-green.svg)](https://www.python.org/)
@@ -31,7 +31,7 @@
 ### 1. 安装
 
 ```bash
-git clone https://github.com/YANNICKsong0032/self-learning-skill.git
+git clone https://github.com/YANNICKsong0032/deep-research.git
 cd self-learning-skill
 ```
 
