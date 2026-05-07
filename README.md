@@ -1,17 +1,23 @@
 <div align="center">
 
+<img src="https://img.shields.io/badge/🔍-Deep_Research-0A0A0A?style=for-the-badge&labelColor=1a1a2e&color=16213e" alt="Deep Research" />
+
 # 🔍 Deep Research
 
-**Autonomous deep research skill for AI Agents**
+### Autonomous Deep Research Skill for AI Agents
 
 *Web search → Cross-validation → Report → Review → Knowledge base → Spaced repetition*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.7+](https://img.shields.io/badge/Python-3.7+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-orange.svg)](#-dependencies)
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-green.svg)](https://github.com/openclaw/openclaw)
+<br>
 
-[Quick Start](#-quick-start) · [Features](#-features) · [Usage](#-usage) · [How It Works](#-how-it-works) · [Contributing](#-contributing)
+[![MIT License](https://img.shields.io/badge/License-MIT-2ecc71?style=flat-square)](LICENSE)
+[![Python 3.7+](https://img.shields.io/badge/Python-3.7+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Zero Deps](https://img.shields.io/badge/Dependencies-Zero-f39c12?style=flat-square)](#-dependencies)
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-9b59b6?style=flat-square)](https://github.com/openclaw/openclaw)
+
+<br>
+
+**[Quick Start](#-quick-start)** · **[Features](#-features)** · **[Usage](#-usage)** · **[How It Works](#-how-it-works)**
 
 </div>
 
@@ -19,131 +25,85 @@
 
 ## ✨ Features
 
-<table>
-<tr>
-<td width="50%">
+```
+🔬 RESEARCH ENGINE                    🧠 KNOWLEDGE SYSTEM
+─────────────────────                 ─────────────────────
+▸ Three learning modes                ▸ 12 category directories
+  quick / standard / deep               with JSON index & tags
+▸ Multi-source search                 ▸ Spaced repetition
+  cross-validates sources               Ebbinghaus 1→3→7→14→30→90d
+▸ Credibility scoring 1-5             ▸ Knowledge linking
+▸ Auto code verification                prerequisite / complement / extend
 
-### 🔬 Research Engine
-- **Three learning modes** — quick scan / standard study / deep research
-- **Multi-source search** — cross-validates multiple sources
-- **Credibility scoring** — 1–5 rating per source
-- **Code verification** — auto-validates code examples
-
-</td>
-<td width="50%">
-
-### 🧠 Knowledge System
-- **12 category directories** with JSON index & tags
-- **Spaced repetition** — Ebbinghaus curve (1→3→7→14→30→90 days)
-- **Knowledge linking** — prerequisite / complementary / extension
-- **Resume on interrupt** — progress auto-saved
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 📊 Analytics
-- **Learning dashboard** — knowledge count, mastery rate, study duration
-- **Structured reports** — auto-generated, user-reviewed before ingestion
-- **URL learning** — feed a link, extract key points
-
-</td>
-<td>
-
-### ⚡ Developer Experience
-- **Unified CLI** — one `learn.py` for everything
-- **Zero dependencies** — pure Python standard library
-- **Modular scripts** — use individually or as a pipeline
-
-</td>
-</tr>
-</table>
+📊 ANALYTICS                          ⚡ EXPERIENCE
+─────────────────────                 ─────────────────────
+▸ Learning dashboard                  ▸ Unified CLI — one entry point
+  count / mastery / duration          ▸ Zero dependencies
+▸ Structured reports                    pure Python stdlib
+▸ URL → extract key points            ▸ Modular & composable
+```
 
 ---
 
 ## 🚀 Quick Start
 
+> **3 commands. That's it.**
+
 ```bash
-git clone https://github.com/YANNICKsong0032/deep-research.git
-cd deep-research
+git clone https://github.com/YANNICKsong0032/deep-research.git && cd deep-research
 python3 scripts/knowledge.py init
+python3 learn.py quick "React Hooks"      # ← start here
 ```
 
-```bash
-# Quick scan (~15 min)
-python3 learn.py quick "React Hooks"
+### All Commands at a Glance
 
-# Standard study (~45 min)
-python3 learn.py study "Python Async"
-
-# Deep research (~90 min)
-python3 learn.py deep "RAG Retrieval Augmented Generation"
-
-# Learn from a URL
-python3 learn.py url "https://example.com/article"
-
-# Verify existing knowledge
-python3 learn.py verify "React Hooks"
-```
+| | Command | What it does | Time |
+|---|---------|-------------|------|
+| 🔍 | `learn.py quick "X"` | Quick scan (3 questions) | ~15 min |
+| 📚 | `learn.py study "X"` | Standard study (8 questions) | ~45 min |
+| 🔬 | `learn.py deep "X"` | Deep research (12 questions) | ~90 min |
+| 🔗 | `learn.py url "https://..."` | Learn from URL | ~5 min |
+| ✅ | `learn.py verify "X"` | Verify existing knowledge | ~10 min |
 
 ---
 
 ## 📖 Usage
 
-### Learning Commands
-
-| Command | Mode | Questions | Requests |
-|---------|------|-----------|----------|
-| `learn.py quick "X"` | 🔍 Quick scan | 3 | ~10 |
-| `learn.py study "X"` | 📚 Standard study | 8 | ~25 |
-| `learn.py deep "X"` | 🔬 Deep research | 12 | ~40 |
-| `learn.py url "https://..."` | 🔗 URL learning | — | ~3 |
-| `learn.py verify "X"` | ✅ Verification | — | ~5 |
-
 ### Knowledge Management
 
-| Command | Purpose |
-|---------|---------|
-| `learn.py search "X"` | 🔎 Search the knowledge base |
-| `learn.py stats` | 📊 Learning statistics |
-| `learn.py review-due` | 📅 Items due for review today |
-| `learn.py expire` | ⏰ Expiration check |
-| `learn.py import-memory` | 📥 Import existing memories |
-
-### Standalone Scripts
+```bash
+learn.py search "X"          # 🔎 Search the knowledge base
+learn.py stats               # 📊 Learning statistics
+learn.py review-due          # 📅 Items due for review
+learn.py expire              # ⏰ Expiration check
+learn.py import-memory       # 📥 Import existing memories
+```
 
 <details>
-<summary><strong>Click to expand all scripts</strong></summary>
+<summary><strong>📂 Standalone Scripts</strong> <em>(click to expand)</em></summary>
 
+<br>
+
+**Knowledge Base**
 ```bash
-# Knowledge base management
-python3 scripts/knowledge.py add --topic "X" --category "ai" --tags "tag1,tag2" --confidence 4.5 --sources 3
+python3 scripts/knowledge.py add --topic "X" --category "ai" --tags "a,b" --confidence 4.5
 python3 scripts/knowledge.py search --query "X"
 python3 scripts/knowledge.py stats
+```
 
-# Spaced repetition
+**Spaced Repetition**
+```bash
 python3 scripts/review.py schedule --topic "X" --category "ai"
 python3 scripts/review.py due
 python3 scripts/review.py done --topic "X"
+```
 
-# Sub-question generation
+**Research Pipeline**
+```bash
 python3 scripts/questions.py generate --topic "X" --mode deep
-python3 scripts/questions.py generate --topic "X" --mode quick
-
-# Cross-validation
 python3 scripts/validate.py check --topic "X"
-
-# Source credibility
 python3 scripts/credibility.py score --url "https://example.com"
-
-# Report generation
 python3 scripts/report.py create --topic "X" --format markdown
-python3 scripts/report.py list
-
-# Sub-knowledge import
-python3 scripts/subknowledge.py scan --category "ai"
-python3 scripts/subknowledge.py import --file "data.json"
 ```
 
 </details>
@@ -153,84 +113,83 @@ python3 scripts/subknowledge.py import --file "data.json"
 ## 🧠 How It Works
 
 ```
-                         ┌─────────────────┐
-                         │   User Topic    │
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │  Sub-Question   │  3–12 focused questions
-                         │   Generation    │  (based on learning mode)
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │  Multi-Source   │  Search & aggregate
-                         │     Search      │  multiple sources
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │  Cross-Validate │  Compare & score
-                         │  (credibility)  │  credibility 1–5
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │  Generate       │──→ User Review
-                         │  Report         │    & Approval
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │  Knowledge      │  Store with tags
-                         │  Ingestion      │  & relationships
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │    Spaced       │  Ebbinghaus curve
-                         │   Repetition    │  1→3→7→14→30→90 days
-                         └─────────────────┘
+  ┌──────────────┐
+  │  User Topic  │
+  └──────┬───────┘
+         ▼
+  ┌──────────────┐
+  │  Generate    │  3–12 focused sub-questions
+  │  Questions   │  based on learning mode
+  └──────┬───────┘
+         ▼
+  ┌──────────────┐
+  │  Multi-Source│  Search & aggregate
+  │  Search      │  multiple sources
+  └──────┬───────┘
+         ▼
+  ┌──────────────┐
+  │  Cross-      │  Compare & score
+  │  Validate    │  credibility 1–5
+  └──────┬───────┘
+         ▼
+  ┌──────────────┐
+  │  Report      │──── User Review ────┐
+  │  & Ingest    │     & Approval      │
+  └──────┬───────┘                     │
+         ▼                             │
+  ┌──────────────┐                     │
+  │  Spaced      │  Ebbinghaus curve   │
+  │  Repetition  │  1→3→7→14→30→90d   │
+  └──────────────┘                     │
+                                       │
+                    ┌──────────────────┘
+                    ▼
+              ┌──────────┐
+              │  Stored  │  tagged + linked
+              │  Forever │  in knowledge base
+              └──────────┘
 ```
 
 ---
 
-## 📁 Project Structure
+## 📁 Structure
 
 ```
 deep-research/
-├── SKILL.md                    # Core skill definition
-├── learn.py                    # 🚀 Unified CLI entry
+├── SKILL.md                    # Core definition
+├── learn.py                    # 🚀 Unified CLI
 ├── scripts/
-│   ├── knowledge.py            # Knowledge base CRUD
-│   ├── review.py               # Spaced repetition scheduler
-│   ├── questions.py            # Sub-question generation
-│   ├── validate.py             # Cross-validation engine
-│   ├── credibility.py          # Source credibility scoring
-│   ├── report.py               # Report generator
-│   └── subknowledge.py         # Sub-knowledge importer
-├── knowledge-base/             # 💾 Your knowledge data
-│   ├── index.json              # Master index
-│   ├── ai/  web/  python/      # 12 category dirs
-│   ├── javascript/  devops/
-│   ├── database/  security/
-│   ├── mobile/  cloud/  data/
-│   └── general/  uncategorized/
-└── tests/                      # Test files
+│   ├── knowledge.py            # CRUD
+│   ├── review.py               # Scheduler
+│   ├── questions.py            # Generator
+│   ├── validate.py             # Validator
+│   ├── credibility.py          # Scorer
+│   ├── report.py               # Reporter
+│   └── subknowledge.py         # Importer
+└── knowledge-base/             # 💾 Data
+    ├── index.json
+    ├── ai/  web/  python/  js/
+    ├── devops/  db/  security/
+    └── mobile/  cloud/  data/
 ```
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Config
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `REQUEST_BUDGET_QUICK` | `10` | Max requests for quick mode |
-| `REQUEST_BUDGET_STUDY` | `25` | Max requests for standard mode |
-| `REQUEST_BUDGET_DEEP` | `40` | Max requests for deep mode |
-| `MIN_CREDIBILITY` | `3` | Minimum credibility to accept |
+| Param | Default | Description |
+|-------|---------|-------------|
+| `REQUEST_BUDGET_QUICK` | `10` | Max requests — quick |
+| `REQUEST_BUDGET_STUDY` | `25` | Max requests — standard |
+| `REQUEST_BUDGET_DEEP` | `40` | Max requests — deep |
+| `MIN_CREDIBILITY` | `3` | Min source credibility |
 | `REVIEW_INTERVALS` | `1,3,7,14,30,90` | Days between reviews |
 
 ---
 
 ## 📦 Dependencies
 
-**Zero.** Uses only Python standard library:
+> **None.** Pure Python standard library.
 
 `json` · `datetime` · `pathlib` · `urllib` · `hashlib` · `argparse`
 
@@ -238,26 +197,24 @@ deep-research/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how:
+```
+Fork → Branch → Commit → Push → PR
+```
 
-1. **Fork** this repository
-2. **Create** a feature branch — `git checkout -b feature/amazing`
-3. **Commit** your changes — `git commit -m 'Add amazing feature'`
-4. **Push** to the branch — `git push origin feature/amazing`
-5. **Open** a Pull Request
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
 ## 📄 License
 
-[MIT License](LICENSE) — free to use, modify, and distribute.
+[MIT](LICENSE) — use freely.
 
----
+<br>
 
 <div align="center">
 
-**Built with ❤️ for the [OpenClaw](https://github.com/openclaw/openclaw) ecosystem**
+**Made with ❤️ for [OpenClaw](https://github.com/openclaw/openclaw)**
 
-⭐ Star this repo if you find it useful!
+*If this saved you time, a ⭐ goes a long way!*
 
 </div>
